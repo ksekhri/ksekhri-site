@@ -1,0 +1,120 @@
+/*
+Defaults - Mobile First
+*/
+
+/* Shared */
+body {
+	background: #DFDFDF;
+}
+a, a:hover {
+	color: #049fd9;
+	text-decoration: none;
+}
+/** Shared Header **/
+#ks-header-row {
+	background: #ffffff;
+}
+#ks-header-title {
+	font-weight: 200;
+	font-size: 2.125rem;
+}
+/** Shared Footer **/
+#ks-footer-row {
+	font-size: 0.75rem;
+}
+
+/* About Page */
+/** About Page Hero **/
+#ks-hero {
+	background: #ffffff;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+.ks-hero-body {
+	font-size: 0.875rem;
+}
+.ks-hero-title {
+	font-weight:300;
+	font-size: 1.375rem;
+}
+.ks-hero-title {
+	margin-top: 20px;
+}
+#ks-hero-cta {
+	margin-top: 20px;
+	border-radius: 50px;
+	background-color: #049fd9;
+	color: #ffffff;
+	font-weight:300;
+	font-size: 1.25rem;
+}
+
+/* 
+Responsive
+*/
+
+/* Bootstrap xs */
+@media (max-width: 575px) {
+	/* Shared */
+	/** Shared Body **/
+	#ks-body-row {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	/* About Page */
+	/** About Page Hero **/
+	#ks-hero {
+		padding: 15px;
+	}
+	#ks-hero-image {
+		max-width: 50%;
+	}
+}
+/* Bootstrap sm+ */
+@media (min-width: 576px) {
+	/* About Page */
+	/** About Page Hero **/
+	#ks-hero {
+		padding: 15px;
+	}
+	.ks-hero-title:first-child{
+		margin-top: 0;
+	}
+}
+/* Bootstrap md+ */
+@media (min-width: 768px) {
+	/* Shared Header */
+	#ks-header-title {
+		font-size: 3.125rem;
+	}
+	/* About Page */
+	/** About Page Hero **/
+	#ks-hero {
+		padding: 30px;
+	}
+	.ks-hero-body {
+		font-size: 1.1875rem;
+	}
+	.ks-hero-title {
+		font-size: 1.75rem;
+	}
+	#ks-hero-cta {
+		font-size: 1.625rem;
+	}
+}
+/* Bootstrap lg+ */
+@media (min-width: 992px) {
+	/* About Page */
+	/** About Page Hero **/
+	#ks-hero {
+		padding: 45px;
+	}
+}
+/* Bootstrap lg+ */
+@media (min-width: 1200px) {
+	/* About Page */
+	/** About Page Hero **/
+	#ks-hero {
+		padding: 60px;
+	}
+}
