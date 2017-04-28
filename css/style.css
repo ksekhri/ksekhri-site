@@ -20,7 +20,7 @@ a, a:hover {
 }
 /** Shared Footer **/
 #ks-footer-row {
-	font-size: 0.75rem;
+	font-size: 0.625rem;
 }
 
 /* About Page */
@@ -30,15 +30,15 @@ a, a:hover {
 	margin-top: 5%;
 	margin-bottom: 5%;
 }
-.ks-hero-body {
-	font-size: 0.875rem;
-}
 .ks-hero-title {
 	font-weight:300;
 	font-size: 1.375rem;
 }
 .ks-hero-title {
 	margin-top: 20px;
+}
+.ks-hero-body {
+	font-size: 0.875rem;
 }
 #ks-hero-cta {
 	margin-top: 20px;
@@ -50,7 +50,7 @@ a, a:hover {
 }
 
 /* 
-Responsive
+Bootstrap Responsive Media Queries
 */
 
 /* Bootstrap xs */
@@ -72,6 +72,10 @@ Responsive
 }
 /* Bootstrap sm+ */
 @media (min-width: 576px) {
+	/* Shared Header */
+	#ks-header-title {
+		font-size: 2.375rem;
+	}
 	/* About Page */
 	/** About Page Hero **/
 	#ks-hero {
@@ -80,9 +84,69 @@ Responsive
 	.ks-hero-title:first-child{
 		margin-top: 0;
 	}
+	.ks-hero-title {
+		font-size: 1.46875rem;
+	}
+	.ks-hero-body {
+		font-size: 0.953125rem;
+	}
+	#ks-hero-cta {
+		font-size: 1.34375rem;
+	}
+	#ks-footer-row {
+		font-size: 0.65625rem;
+	}
 }
 /* Bootstrap md+ */
 @media (min-width: 768px) {
+	/* Shared Header */
+	#ks-header-title {
+		font-size: 2.625rem;
+	}
+	/* About Page */
+	/** About Page Hero **/
+	#ks-hero {
+		padding: 30px;
+	}
+	.ks-hero-title {
+		font-size: 1.5625rem;
+	}
+	.ks-hero-body {
+		font-size: 1.03125rem;
+	}
+	#ks-hero-cta {
+		font-size: 1.4375rem;
+	}
+	#ks-footer-row {
+		font-size: 0.6875rem;
+	}
+}
+/* Bootstrap lg+ */
+@media (min-width: 992px) {
+	/* Shared Header */
+	#ks-header-title {
+		font-size: 2.875rem;
+	}
+	/* About Page */
+	/** About Page Hero **/
+	#ks-hero {
+		padding: 45px;
+	}
+	.ks-hero-title {
+		font-size: 1.65625rem;
+	}
+	.ks-hero-body {
+		font-size: 1.109375rem;
+	}
+	#ks-hero-cta {
+		font-size: 1.53125rem;
+	}
+	#ks-footer-row {
+		font-size: 0.71875rem;
+	}
+}
+/* Bootstrap xl+ */
+@media (min-width: 1200px) {
 	/* Shared Header */
 	#ks-header-title {
 		font-size: 3.125rem;
@@ -90,28 +154,23 @@ Responsive
 	/* About Page */
 	/** About Page Hero **/
 	#ks-hero {
-		padding: 30px;
-	}
-	.ks-hero-body {
-		font-size: 1.1875rem;
+		padding: 45px;
 	}
 	.ks-hero-title {
 		font-size: 1.75rem;
 	}
+	.ks-hero-body {
+		font-size: 1.1875rem;
+	}
 	#ks-hero-cta {
 		font-size: 1.625rem;
 	}
-}
-/* Bootstrap lg+ */
-@media (min-width: 992px) {
-	/* About Page */
-	/** About Page Hero **/
-	#ks-hero {
-		padding: 45px;
+	#ks-footer-row {
+		font-size: 0.75rem;
 	}
 }
-/* Bootstrap lg+ */
-@media (min-width: 1200px) {
+/* Non-Bootstrap XXL+ */
+@media (min-width: 1400px) {
 	/* About Page */
 	/** About Page Hero **/
 	#ks-hero {
