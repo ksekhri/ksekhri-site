@@ -17,6 +17,20 @@ a, a:hover {
 #ks-header-title {
 	font-weight: 200;
 	font-size: 2.125rem;
+	line-height: 3.75rem;
+}
+.ks-header-menu-item {
+	padding-bottom: 1px;
+	padding-top: 1px;
+	border-bottom: 2px solid rgba(255, 255, 255, 0);
+	transition: border-bottom 0.15s linear;
+}
+.ks-header-menu-item.active, .ks-header-menu-item:hover {
+	border-bottom-color: #049fd9;
+}
+.ks-header-menu-spacer {
+	padding-left: 15px;
+	padding-right: 15px;
 }
 /** Shared Footer **/
 #ks-footer-row {
@@ -35,13 +49,13 @@ a, a:hover {
 	font-size: 1.375rem;
 }
 .ks-hero-title {
-	margin-top: 20px;
+	margin-top: 10px;
 }
 .ks-hero-body {
 	font-size: 0.875rem;
 }
 #ks-hero-cta {
-	margin-top: 20px;
+	margin-top: 15px;
 	border-radius: 50px;
 	background-color: #049fd9;
 	color: #ffffff;
@@ -56,6 +70,16 @@ Bootstrap Responsive Media Queries
 /* Bootstrap xs */
 @media (max-width: 575px) {
 	/* Shared */
+	/** Shared Header **/
+	#ks-header-title {
+		width: 100%;
+		text-align: center;
+	}
+	#ks-header-menu {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: center;
+	}
 	/** Shared Body **/
 	#ks-body-row {
 		margin-left: 0;
@@ -75,11 +99,18 @@ Bootstrap Responsive Media Queries
 	/* Shared Header */
 	#ks-header-title {
 		font-size: 2.375rem;
+		float: left;
+	}
+	.ks-header-menu-item {
+		float: right;
+	}
+	.ks-header-menu-spacer {
+		float: right;
 	}
 	/* About Page */
 	/** About Page Hero **/
 	#ks-hero {
-		padding: 15px;
+		padding: 22.5px;
 	}
 	.ks-hero-title:first-child{
 		margin-top: 0;
@@ -110,12 +141,14 @@ Bootstrap Responsive Media Queries
 	}
 	.ks-hero-title {
 		font-size: 1.5625rem;
+		margin-top: 15px;
 	}
 	.ks-hero-body {
 		font-size: 1.03125rem;
 	}
 	#ks-hero-cta {
 		font-size: 1.4375rem;
+		margin-top: 20px;
 	}
 	#ks-footer-row {
 		font-size: 0.6875rem;
@@ -134,12 +167,14 @@ Bootstrap Responsive Media Queries
 	}
 	.ks-hero-title {
 		font-size: 1.65625rem;
+		margin-top: 20px;
 	}
 	.ks-hero-body {
 		font-size: 1.109375rem;
 	}
 	#ks-hero-cta {
 		font-size: 1.53125rem;
+		margin-top: 25px;
 	}
 	#ks-footer-row {
 		font-size: 0.71875rem;
@@ -158,12 +193,14 @@ Bootstrap Responsive Media Queries
 	}
 	.ks-hero-title {
 		font-size: 1.75rem;
+		margin-top: 25px;
 	}
 	.ks-hero-body {
 		font-size: 1.1875rem;
 	}
 	#ks-hero-cta {
 		font-size: 1.625rem;
+		margin-top: 30px;
 	}
 	#ks-footer-row {
 		font-size: 0.75rem;
