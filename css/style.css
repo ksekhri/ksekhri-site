@@ -14,13 +14,17 @@ a, a:hover {
 #ks-header-row {
 	background: #ffffff;
 }
+#ks-header-col {
+	padding-left: 0;
+	padding-right: 0;
+}
 #ks-header-title {
 	font-weight: 200;
 	font-size: 2.125rem;
 	line-height: 3.75rem;
 }
 .ks-header-menu-item {
-	padding-bottom: 1px;
+	padding-bottom: 3px;
 	padding-top: 1px;
 	border-bottom: 2px solid rgba(255, 255, 255, 0);
 	transition: border-bottom 0.15s linear;
@@ -99,6 +103,11 @@ Bootstrap Responsive Media Queries
 /* Bootstrap sm+ */
 @media (min-width: 576px) {
 	/* Shared Header */
+	#ks-header-col {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+	}
 	#ks-header-title {
 		font-size: 2.375rem;
 		float: left;
