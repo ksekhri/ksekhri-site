@@ -23,9 +23,14 @@ a, a:hover {
 	font-size: 2.125rem;
 	line-height: 3.75rem;
 }
+#ks-header-menu {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: center;
+}
 .ks-header-menu-item {
-	padding-bottom: 3px;
-	padding-top: 1px;
+	font-size: 1rem;
+	line-height: 1.85rem;
 	border-bottom: 2px solid rgba(255, 255, 255, 0);
 	transition: border-bottom 0.15s linear;
 }
@@ -110,13 +115,12 @@ Bootstrap Responsive Media Queries
 	}
 	#ks-header-title {
 		font-size: 2.375rem;
+		line-height: 4.0625rem;
 		float: left;
 	}
 	.ks-header-menu-item {
-		float: right;
 	}
 	.ks-header-menu-spacer {
-		float: right;
 	}
 	/* About Page */
 	/** About Page Hero **/
@@ -144,6 +148,7 @@ Bootstrap Responsive Media Queries
 	/* Shared Header */
 	#ks-header-title {
 		font-size: 2.625rem;
+		line-height: 4.375rem;
 	}
 	/* About Page */
 	/** About Page Hero **/
@@ -170,6 +175,7 @@ Bootstrap Responsive Media Queries
 	/* Shared Header */
 	#ks-header-title {
 		font-size: 2.875rem;
+		line-height: 4.6875rem;
 	}
 	/* About Page */
 	/** About Page Hero **/
@@ -196,6 +202,15 @@ Bootstrap Responsive Media Queries
 	/* Shared Header */
 	#ks-header-title {
 		font-size: 3.125rem;
+		line-height: 5rem;
+	}
+	.ks-header-menu-item {
+		font-size: 2.375rem;
+		line-height: 5rem;
+		font-weight: 200;
+	}
+	.ks-header-menu-spacer {
+		line-height: 5rem;
 	}
 	/* About Page */
 	/** About Page Hero **/
