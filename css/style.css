@@ -124,6 +124,7 @@ Bootstrap Responsive Media Queries
 		font-weight: 300;
 	}
 	.ks-header-menu-spacer {
+		font-size: 1.1rem;
 		line-height: 4.0625rem;
 	}
 	/* About Page */
@@ -160,6 +161,7 @@ Bootstrap Responsive Media Queries
 		font-weight: 200;
 	}
 	.ks-header-menu-spacer {
+		font-size: 1.2rem;
 		line-height: 4.375rem;
 	}
 	/* About Page */
@@ -195,6 +197,7 @@ Bootstrap Responsive Media Queries
 		border-bottom-width: 2.5px;
 	}
 	.ks-header-menu-spacer {
+		font-size: 1.3rem;
 		line-height: 4.6875rem;
 	}
 	/* About Page */
@@ -230,6 +233,7 @@ Bootstrap Responsive Media Queries
 		font-weight: 200;
 	}
 	.ks-header-menu-spacer {
+	    font-size: 1.4rem;
 		line-height: 5rem;
 	}
 	/* About Page */
