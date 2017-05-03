@@ -25,7 +25,7 @@ a, a:hover {
 }
 #ks-header-menu {
 	display: flex;
-	flex-direction: row-reverse;
+	flex-direction: row;
 	justify-content: center;
 }
 .ks-header-menu-item {
@@ -33,6 +33,7 @@ a, a:hover {
 	line-height: 1.85rem;
 	border-bottom: 2px solid rgba(255, 255, 255, 0);
 	transition: border-bottom 0.15s linear;
+	cursor: pointer;
 }
 .ks-header-menu-item.active, .ks-header-menu-item:hover {
 	border-bottom-color: #049fd9;
@@ -88,7 +89,6 @@ Bootstrap Responsive Media Queries
 	}
 	#ks-header-menu {
 		display: flex;
-		flex-direction: row-reverse;
 		justify-content: center;
 	}
 	/** Shared Body **/
