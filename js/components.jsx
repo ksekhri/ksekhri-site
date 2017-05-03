@@ -86,12 +86,17 @@ class AboutBody extends React.Component {
 		);
 	}
 }
+class KSApp extends React.Component {
+	render() {
+		return (
+			<div id="ks-app" className="container-fluid">
+				<Header />
+				<AboutBody />
+				<Footer />
+			</div>
+		);
+	}
+}
 ReactDOM.render(
-	<Header />, document.getElementById('ks-header')
-);
-ReactDOM.render(
-	<AboutBody />, document.getElementById('ks-body')
-);
-ReactDOM.render(
-	<Footer />, document.getElementById('ks-footer')
+	<KSApp />, document.body
 );
