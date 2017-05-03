@@ -1,14 +1,11 @@
 class Header extends React.Component {
+	handleTabClick(e) {
+		this.props.setPage(e.target.textContent);
+	}
 	render() {
 		// Generate classNames for tabs
-		let aboutActive, portfolioActive;
-		if(this.props.isHomepage) { // Set Active tab
-			aboutActive='active';
-			portfolioActive='';
-		} else {
-			aboutActive='';
-			portfolioActive='active';
-		}
+		let aboutActive = (this.props.selectedPage === this.props.PageSelection.ABOUT) ? 'active' : '';
+		let portfolioActive = (this.props.selectedPage === this.props.PageSelection.PORTFOLIO) ? 'active' : '';
 		let aboutClass = `ks-header-menu-item ${aboutActive}`;
 		let portfolioClass = `ks-header-menu-item ${portfolioActive}`
 		return (
@@ -16,9 +13,9 @@ class Header extends React.Component {
 				<div id="ks-header-col" className="col-sm-10 offset-sm-1">
 					<div id="ks-header-title">Karan Sekhri</div>
 					<div id="ks-header-menu">
-						<div className={aboutClass} onClick={this.props.setAbout}>About</div>
+						<div className={aboutClass} onClick={this.handleTabClick.bind(this)}>About</div>
 						<div className="ks-header-menu-spacer">•</div>
-						<div className={portfolioClass} onClick={this.props.setPortfolio}>Portfolio</div>
+						<div className={portfolioClass} onClick={this.handleTabClick.bind(this)}>Portfolio</div>
 					</div>
 				</div>
 			</div>
@@ -74,30 +71,35 @@ class AboutBody extends React.Component {
 class KSApp extends React.Component {
 	constructor() {
 		super();
+		this.PageSelection = {
+			ABOUT: 0,
+			PORTFOLIO: 1
+		}
 		this.state = {
-			isHomepage: true
+			selectedPage: this.PageSelection.ABOUT
 		}
 	}
-	setAbout() {
+	setPage(tabTitle) {
+		let newPage;
+		if(tabTitle === 'About') {
+			newPage = this.PageSelection.ABOUT
+		} else if (tabTitle === 'Portfolio') {
+			newPage = this.PageSelection.PORTFOLIO
+		}
 		this.setState({
-			isHomepage: true
-		});
-	}
-	setPortfolio() {
-		this.setState({
-			isHomepage: false
+			selectedPage: newPage
 		});
 	}
 	render() {
 		let body;
-		if (this.state.isHomepage) {
+		if (this.state.selectedPage == this.PageSelection.ABOUT) {
 			body = <AboutBody/>;
-		} else {
+		} else if (this.state.selectedPage == this.PageSelection.PORTFOLIO) {
 			body = 'Portfolio';
 		}
 		return (
 			<div id="ks-app" className="container-fluid">
-				<Header isHomepage={this.state.isHomepage} setAbout={this.setAbout.bind(this)} setPortfolio={this.setPortfolio.bind(this)}/>
+				<Header selectedPage={this.state.selectedPage} PageSelection={this.PageSelection} setPage={this.setPage.bind(this)}/>
 				{body}
 				<Footer />
 			</div>
