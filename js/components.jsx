@@ -1,39 +1,24 @@
 class Header extends React.Component {
-	constructor() {
-		super();
-		this.TabSelection = {
-			ABOUT: 0,
-			PORTFOLIO: 1
-		}
-		this.state = {
-			activeTab: this.TabSelection.ABOUT
-		}
-	}
-	changeTabPortfolio() {
-		this.setState ({
-			activeTab: this.TabSelection.PORTFOLIO
-		});
-	}
-	changeTabAbout() {
-		this.setState ({
-			activeTab: this.TabSelection.ABOUT
-		});
-	}
 	render() {
 		// Generate classNames for tabs
-		// Is About tab "active"?
-		let aboutActive = (this.state.activeTab === this.TabSelection.ABOUT) ? 'active' : '';
+		let aboutActive, portfolioActive;
+		if(this.props.isHomepage) { // Set Active tab
+			aboutActive='active';
+			portfolioActive='';
+		} else {
+			aboutActive='';
+			portfolioActive='active';
+		}
 		let aboutClass = `ks-header-menu-item ${aboutActive}`;
-		let portfolioActive = (this.state.activeTab === this.TabSelection.PORTFOLIO) ? 'active' : '';
 		let portfolioClass = `ks-header-menu-item ${portfolioActive}`
 		return (
 			<div id="ks-header-row" className="row">
 				<div id="ks-header-col" className="col-sm-10 offset-sm-1">
 					<div id="ks-header-title">Karan Sekhri</div>
 					<div id="ks-header-menu">
-						<div className={aboutClass} onClick={this.changeTabAbout.bind(this)}>About</div>
+						<div className={aboutClass} onClick={this.props.setAbout}>About</div>
 						<div className="ks-header-menu-spacer">•</div>
-						<div className={portfolioClass} onClick={this.changeTabPortfolio.bind(this)}>Portfolio</div>
+						<div className={portfolioClass} onClick={this.props.setPortfolio}>Portfolio</div>
 					</div>
 				</div>
 			</div>
@@ -87,16 +72,38 @@ class AboutBody extends React.Component {
 	}
 }
 class KSApp extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			isHomepage: true
+		}
+	}
+	setAbout() {
+		this.setState({
+			isHomepage: true
+		});
+	}
+	setPortfolio() {
+		this.setState({
+			isHomepage: false
+		});
+	}
 	render() {
+		let body;
+		if (this.state.isHomepage) {
+			body = <AboutBody/>;
+		} else {
+			body = 'Portfolio';
+		}
 		return (
 			<div id="ks-app" className="container-fluid">
-				<Header />
-				<AboutBody />
+				<Header isHomepage={this.state.isHomepage} setAbout={this.setAbout.bind(this)} setPortfolio={this.setPortfolio.bind(this)}/>
+				{body}
 				<Footer />
 			</div>
 		);
 	}
 }
 ReactDOM.render(
-	<KSApp />, document.body
+	<KSApp />, document.getElementById('ks-app-wrapper')
 );
