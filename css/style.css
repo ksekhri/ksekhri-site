@@ -49,7 +49,7 @@ a, a:hover {
 /** Shared Footer **/
 #ks-footer-row {
 	font-size: 0.625rem;
-	margin-bottom: 5%;
+	margin-bottom: 15px;
 }
 
 /* About Page */
@@ -75,6 +75,24 @@ a, a:hover {
 	color: #ffffff;
 	font-weight:300;
 	font-size: 1.25rem;
+}
+
+/* Portfolio Page */
+.ks-company-title {
+	font-size: 1.375rem;
+	font-weight: 200;
+	text-align: center;
+	/*line-height: 3.5rem;*/
+}
+.ks-company-title:first-child {
+	margin-top: 15px;
+}
+.ks-card.ks-company-card {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.ks-card.ks-company-card:last-child {
+	margin-bottom: 15px;
 }
 
 /* 
@@ -103,9 +121,16 @@ Bootstrap Responsive Media Queries
 	/** About Page Hero **/
 	#ks-hero {
 		padding: 15px;
+		margin-top: 15px;
+		margin-bottom: 15px;
 	}
 	#ks-hero-image {
 		max-width: 50%;
+	}
+	/* Portfolio Page */
+	.ks-company-title {
+		margin-left: 15px;
+		margin-right: 15px;
 	}
 }
 /* Bootstrap sm+ */
@@ -257,6 +282,12 @@ Bootstrap Responsive Media Queries
 	}
 	#ks-footer-row {
 		font-size: 0.75rem;
+	}
+	/* Portfolio Page */
+	.ks-company-title {
+		font-size: 2rem;
+		/*padding-top: 30px;*/
+		/*padding-bottom: 30px;*/
 	}
 }
 /* Non-Bootstrap XXL+ */
