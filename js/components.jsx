@@ -68,6 +68,28 @@ class AboutBody extends React.Component {
 		);
 	}
 }
+class PortfolioBody extends React.Component {
+	render() {
+		return (
+			<div className="row">
+				<div className="col-sm-10 offset-sm-1 ks-company-title">TCS/Cisco (2015-Present)</div>
+				<div className="col-sm-10 offset-sm-1 ks-card ks-company-card">
+					<div className="project row">
+						<div className="col-sm-4 hidden-xs-down ks-project-image">test</div>
+						<div className="col-sm-8">
+							<div className="row">
+								<div className="col-sm-12 ks-project-title">ABMU Phlebotomist Companion</div>
+								<div className="col-sm-12 ks-project-responsibilities">UX Design, Management</div>
+								<div className="col-sm-4 ks-hidden-sm-up project-image">test</div>
+								<div className="col-sm-12 ks-project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet arcu sed lectus luctus sodales. Aenean in turpis non ex tempus tristique. Aenean maximus lectus est, iaculis commodo dui gravida pulvinar. Nam rutrum fringilla justo. Pellentesque eget lacinia justo, placerat efficitur ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus dignissim sed enim pretium efficitur. Suspendisse fringilla quam purus, in dignissim elit ultricies ut. Pellentesque imperdiet eros maximus eros consequat, ut vehicula risus volutpat. Proin sagittis massa dignissim hendrerit condimentum.</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		);
+	}
+}
 class KSApp extends React.Component {
 	constructor() {
 		super();
@@ -95,7 +117,7 @@ class KSApp extends React.Component {
 		if (this.state.selectedPage == this.PageSelection.ABOUT) {
 			body = <AboutBody/>;
 		} else if (this.state.selectedPage == this.PageSelection.PORTFOLIO) {
-			body = 'Portfolio';
+			body = <PortfolioBody/>;
 		}
 		return (
 			<div id="ks-app" className="container-fluid">
