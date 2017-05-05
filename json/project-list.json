@@ -1,0 +1,14 @@
+[
+{
+        "company": "TCS/Cisco",
+        "startDate": 2015,
+        "endDate": null,
+"projects":[{"name":"ABMU","responsibilities":["UX Design","Management"],"imagePath":"/images/abmu-phlebotomist-companion.png","description":"I was challenged with designing an application to help sell Cisco Wifi and iBeacon infrastructure to hospitals. I decided to focus on how the technology could be applied to help phlebotomists become more efficient in their daily activities."}]
+    }
+,{
+        "company": "TCS/Cisco",
+        "startDate": 2015,
+        "endDate": null,
+"projects":[{"name":"ABMU","responsibilities":["UX Design","Management"],"imagePath":"/images/abmu-phlebotomist-companion.png","description":"I was challenged with designing an application to help sell Cisco Wifi and iBeacon infrastructure to hospitals. I decided to focus on how the technology could be applied to help phlebotomists become more efficient in their daily activities."}]
+    }
+]			
