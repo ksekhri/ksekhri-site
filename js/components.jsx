@@ -1,3 +1,4 @@
+/* Shared Header */
 class Header extends React.Component {
 	handleTabClick(e) {
 		this.props.setPage(e.target.textContent);
@@ -22,6 +23,7 @@ class Header extends React.Component {
 		);
 	}
 }
+/* Shared Footer */
 class Footer extends React.Component {
 	render() {
 		return (
@@ -40,6 +42,7 @@ class Footer extends React.Component {
 		);
 	}
 }
+/* About Page Body */
 class AboutBody extends React.Component {
 	render() {
 		return(
@@ -68,6 +71,7 @@ class AboutBody extends React.Component {
 		);
 	}
 }
+/* Portfolio Page Body */
 class PortfolioBody extends React.Component {
 	constructor() {
 		super();
@@ -105,7 +109,15 @@ class PortfolioBody extends React.Component {
 	}
 	render() {
 		return (
-			<div className="row">
+			<PortfolioCompanyBlock />
+		);
+	}
+}
+/* Portfolio Company Block */
+class PortfolioCompanyBlock extends React.Component {
+	render() {
+		return(
+			<div className="row ks-portfolio-company-block">
 				<div className="col-sm-10 offset-sm-1 ks-company-title">TCS/Cisco (2015-Present)</div>
 				<div className="col-sm-10 offset-sm-1 ks-card ks-company-card">
 					<div className="project row">
@@ -124,7 +136,8 @@ class PortfolioBody extends React.Component {
 		);
 	}
 }
-class KSApp extends React.Component {
+/* Root KSAppBox Component */
+class KSAppBox extends React.Component {
 	constructor() {
 		super();
 		this.PageSelection = {
@@ -162,6 +175,7 @@ class KSApp extends React.Component {
 		);
 	}
 }
+/* Render Method */
 ReactDOM.render(
-	<KSApp />, document.getElementById('ks-app-wrapper')
+	<KSAppBox />, document.getElementById('ks-app-wrapper')
 );
