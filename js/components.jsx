@@ -76,7 +76,7 @@ class PortfolioBody extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			projects: null
+			projects: []
 		};
 	}
 	fetchProjects(){
@@ -85,7 +85,7 @@ class PortfolioBody extends React.Component {
 
 		// Create request to XHR object
 		// 3 parameters to open: 1) Method: GET/POST 2) Location of data file 3) Boolean asynch? - Default true
-		request.open('GET','../json/projects.json');
+		request.open('GET','../json/project-list.json');
 
 		// Send request to server
 		request.send();
@@ -99,37 +99,69 @@ class PortfolioBody extends React.Component {
 		// 4 Request finished & response ready
 		request.onreadystatechange = () => {
 			if(request.status===200 && request.readyState === 4) {
+				console.log(request.responseText);
 				this.setState({projects: JSON.parse(request.responseText)});
 			}
-		}
+		};
 		// OR request.onreadystatechange = functionName;
 	}
 	componentWillMount() {
 		this.fetchProjects();
 	}
 	render() {
+		let companyProjects = this.state.projects.map( (company) => {
+			return (<PortfolioCompany companyProjects={company} />);
+		});
 		return (
-			<PortfolioCompanyBlock />
+			<div>
+				{companyProjects}
+			</div>
 		);
 	}
 }
-/* Portfolio Company Block */
-class PortfolioCompanyBlock extends React.Component {
+/* Portfolio Company */
+class PortfolioCompany extends React.Component {
 	render() {
+		// Generate Date Line
+		let endDate = this.props.companyProjects.endDate || 'Present';
+		let companyDate = `(${this.props.companyProjects.startDate} - ${endDate})`;
+
+		let portfolioProjects = this.props.companyProjects.projects.map( (project) => {
+			return (<PortfolioProject project={project}/>);
+		});
 		return(
 			<div className="row ks-portfolio-company-block">
-				<div className="col-sm-10 offset-sm-1 ks-company-title">TCS/Cisco (2015-Present)</div>
+				<div className="col-sm-10 offset-sm-1 ks-company-title">{this.props.companyProjects.company} {companyDate}</div>
 				<div className="col-sm-10 offset-sm-1 ks-card ks-company-card">
-					<div className="project row">
-						<div className="col-sm-4 hidden-xs-down ks-project-image">test</div>
-						<div className="col-sm-8">
-							<div className="row">
-								<div className="col-sm-12 ks-project-title">ABMU Phlebotomist Companion</div>
-								<div className="col-sm-12 ks-project-responsibilities">UX Design, Management</div>
-								<div className="col-sm-4 ks-hidden-sm-up project-image">test</div>
-								<div className="col-sm-12 ks-project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet arcu sed lectus luctus sodales. Aenean in turpis non ex tempus tristique. Aenean maximus lectus est, iaculis commodo dui gravida pulvinar. Nam rutrum fringilla justo. Pellentesque eget lacinia justo, placerat efficitur ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus dignissim sed enim pretium efficitur. Suspendisse fringilla quam purus, in dignissim elit ultricies ut. Pellentesque imperdiet eros maximus eros consequat, ut vehicula risus volutpat. Proin sagittis massa dignissim hendrerit condimentum.</div>
-							</div>
-						</div>
+					{portfolioProjects}
+				</div>
+			</div>
+		);
+	}
+}
+class PortfolioProject extends React.Component {
+	generateResponsibilities() {
+		let resp = '';
+		let len = this.props.project.responsibilities.length;
+		for(let i=0; i<len; i++) {
+			resp += this.props.project.responsibilities[i];
+			if (i!==len-1) {
+				resp += ', ';
+			}
+		}
+		return resp;
+	}
+	render() {
+		let img = <img className="img-fluid" src={this.props.project.imagePath}/>;
+		return(
+			<div className="project row">
+				<div className="col-sm-4 hidden-xs-down ks-project-image">{img}</div>
+				<div className="col-sm-8">
+					<div className="row">
+						<div className="col-sm-12 ks-project-name">{this.props.project.name}</div>
+						<div className="col-sm-12 ks-project-responsibilities">{this.generateResponsibilities()}</div>
+						<div className="col-sm-4 hidden-sm-up project-image">{img}</div>
+						<div className="col-sm-12 ks-project-description">{this.props.project.description}</div>
 					</div>
 				</div>
 			</div>
