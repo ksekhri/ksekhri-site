@@ -109,8 +109,13 @@ class PortfolioBody extends React.Component {
 		this.fetchProjects();
 	}
 	render() {
-		let companyProjects = this.state.projects.map( (company) => {
-			return (<PortfolioCompany companyProjects={company} />);
+		let lastCompanyIndex = this.state.projects.length - 1;
+		let companyProjects = this.state.projects.map( (company, companyIndex) => {
+			let lastCompany = false;
+			if(companyIndex === lastCompanyIndex) {
+				lastCompany = true;
+			}
+			return (<PortfolioCompany companyProjects={company} lastCompany={lastCompany}/>);
 		});
 		return (
 			<div>
@@ -125,14 +130,22 @@ class PortfolioCompany extends React.Component {
 		// Generate Date Line
 		let endDate = this.props.companyProjects.endDate || 'Present';
 		let companyDate = `(${this.props.companyProjects.startDate} - ${endDate})`;
-
-		let portfolioProjects = this.props.companyProjects.projects.map( (project) => {
-			return (<PortfolioProject project={project}/>);
+		let lastProjectIndex = this.props.companyProjects.projects.length - 1;
+		let portfolioProjects = this.props.companyProjects.projects.map( (project, projectIndex) => {
+			let lastProject = false;
+			if(projectIndex === lastProjectIndex) {
+				lastProject = true;
+			}
+			return (<PortfolioProject project={project} lastProject={lastProject}/>);
 		});
+		let cardClassName = this.props.lastCompany ? "col-sm-10 offset-sm-1 ks-card ks-company-card ks-company-card-last": "col-sm-10 offset-sm-1 ks-card ks-company-card";
 		return(
 			<div className="row ks-portfolio-company-block">
-				<div className="col-sm-10 offset-sm-1 ks-company-title">{this.props.companyProjects.company} {companyDate}</div>
-				<div className="col-sm-10 offset-sm-1 ks-card ks-company-card">
+				<div className="col-sm-10 offset-sm-1 ks-company-title">
+					<div className="ks-company-title-name">{this.props.companyProjects.company}</div>
+					<div className="ks-company-title-date">{companyDate}</div>
+				</div>
+				<div className={cardClassName}>
 					{portfolioProjects}
 				</div>
 			</div>
@@ -152,18 +165,23 @@ class PortfolioProject extends React.Component {
 		return resp;
 	}
 	render() {
-		let img = <img className="img-fluid" src={this.props.project.imagePath}/>;
+		let lastProject = this.props.lastProject;
+		let dividerMobile = lastProject? <div className="col-sm-12 hidden-sm-up ks-project-divider-container"><hr className="ks-project-divider-last"/></div> : <div className="col-sm-12 ks-project-divider-container hidden-sm-up"><hr className="ks-project-divider ks-project-divider-mobile"/></div>;
+		let dividerDesktop = lastProject? <div className="col-sm-12 hidden-xs-down ks-project-divider-container"><hr className="ks-project-divider-last"/></div> : <div className="col-sm-12 ks-project-divider-container hidden-xs-down"><hr className="ks-project-divider ks-project-divider-desktop"/></div>;
+		let img = <img className="img-fluid ks-project-image" src={this.props.project.imagePath}/>;
 		return(
-			<div className="project row">
-				<div className="col-sm-4 hidden-xs-down ks-project-image">{img}</div>
+			<div className="ks-project row text-center text-sm-left">
+				<div className="col-sm-4 hidden-xs-down ks-project-image text-center">{img}</div>
 				<div className="col-sm-8">
 					<div className="row">
 						<div className="col-sm-12 ks-project-name">{this.props.project.name}</div>
 						<div className="col-sm-12 ks-project-responsibilities">{this.generateResponsibilities()}</div>
-						<div className="col-sm-4 hidden-sm-up project-image">{img}</div>
+						<div className="col-sm-4 hidden-sm-up project-image-container">{img}</div>
 						<div className="col-sm-12 ks-project-description">{this.props.project.description}</div>
+						{dividerMobile}
 					</div>
 				</div>
+				{dividerDesktop}
 			</div>
 		);
 	}
