@@ -128,8 +128,16 @@ class PortfolioBody extends React.Component {
 class PortfolioCompany extends React.Component {
 	render() {
 		// Generate Date Line
-		let endDate = this.props.companyProjects.endDate || 'Present';
-		let companyDate = `(${this.props.companyProjects.startDate} - ${endDate})`;
+		let startDate = this.props.companyProjects.startDate;
+		let endDate = this.props.companyProjects.endDate;
+		let companyDate;
+		if(endDate === null) {
+			companyDate = `(${startDate} - Present)`;
+		} else if (startDate === endDate) {
+			companyDate = `(${startDate})`;
+		} else {
+			companyDate = `(${startDate} - ${endDate})`;
+		}		
 		let lastProjectIndex = this.props.companyProjects.projects.length - 1;
 		let portfolioProjects = this.props.companyProjects.projects.map( (project, projectIndex) => {
 			let lastProject = false;
