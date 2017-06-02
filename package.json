@@ -1,0 +1,20 @@
+{
+  "name": "ksekhri-site",
+  "version": "1.0.0",
+  "description": "ksekhri.com homepage source code",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksekhri/ksekhri-site.git"
+  },
+  "keywords": [
+    "portfolio","react","reactjs","css3","html5","json","ajax","npm"
+  ],
+  "author": "Karan Sekhri",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ksekhri/ksekhri-site/issues"
+  },
+  "homepage": "https://github.com/ksekhri/ksekhri-site#readme"
+}
