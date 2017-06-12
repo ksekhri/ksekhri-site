@@ -99,7 +99,6 @@ class PortfolioBody extends React.Component {
 		// 4 Request finished & response ready
 		request.onreadystatechange = () => {
 			if(request.status===200 && request.readyState === 4) {
-				console.log(request.responseText);
 				this.setState({projects: JSON.parse(request.responseText)});
 			}
 		};
