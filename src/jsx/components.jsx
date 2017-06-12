@@ -195,7 +195,7 @@ class PortfolioProject extends React.Component {
 	}
 }
 /* Root KSAppBox Component */
-class KSAppBox extends React.Component {
+export class KSAppBox extends React.Component {
 	constructor() {
 		super();
 		this.PageSelection = {
@@ -233,7 +233,3 @@ class KSAppBox extends React.Component {
 		);
 	}
 }
-/* Render Method */
-ReactDOM.render(
-	<KSAppBox />, document.getElementById('ks-app-wrapper')
-);
