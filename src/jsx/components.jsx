@@ -178,8 +178,8 @@ class PortfolioProject extends React.Component {
 		let img = <img className="img-fluid ks-project-image" src={this.props.project.imagePath}/>;
 		return(
 			<div className="ks-project row text-center text-sm-left">
-				<div className="col-sm-4 hidden-xs-down ks-project-image text-center">{img}</div>
-				<div className="col-sm-8">
+				<div className="col-sm-5 col-md-4 hidden-xs-down ks-project-image text-center">{img}</div>
+				<div className="col-sm-7 col-md-8">
 					<div className="row">
 						<div className="col-sm-12 ks-project-name">{this.props.project.name}</div>
 						<div className="col-sm-12 ks-project-responsibilities">{this.generateResponsibilities()}</div>
