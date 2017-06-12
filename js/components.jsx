@@ -59,7 +59,7 @@ class AboutBody extends React.Component {
 								<div className="col-sm-12 ks-hero-title">Located in</div>
 								<div className="col-sm-12 ks-hero-body">Sunnyvale, CA</div>
 								<div className="col-sm-12 ks-hero-title">Looking for</div>
-								<div className="col-sm-12 ks-hero-body">A small, passionate, principled team where I'm given the opportunity, support, and resources to build on consumer products that make a difference in the world.</div>
+								<div className="col-sm-12 ks-hero-body">A small, passionate, principled team where I'm given the opportunity, support, and resources to build consumer products that make a difference in the world.</div>
 								<div className="col-sm-12">
 									<a href="https://www.linkedin.com/in/ksekhri/" className="btn" role="button" id="ks-hero-cta" title="Karan Sekhri LinkedIn">See My LinkedIn</a>
 								</div>
