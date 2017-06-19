@@ -1,5 +1,9 @@
-import {KSAppBox} from './jsx/components.jsx'
+import React from 'react'
+import { render } from 'react-dom'
+import { App } from './jsx/components.jsx'
 
-ReactDOM.render(
-	<KSAppBox />, document.getElementById('ks-app-wrapper')
+window.React = React;
+
+render(
+	<App />, document.getElementById('ks-app-wrapper')
 );

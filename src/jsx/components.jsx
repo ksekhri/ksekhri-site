@@ -1,5 +1,7 @@
+import { Component } from 'react'
+
 /* Shared Header */
-class Header extends React.Component {
+class Header extends Component {
 	handleTabClick(e) {
 		this.props.setPage(e.target.textContent);
 	}
@@ -24,7 +26,7 @@ class Header extends React.Component {
 	}
 }
 /* Shared Footer */
-class Footer extends React.Component {
+class Footer extends Component {
 	render() {
 		return (
 			<div id="ks-footer-row" className="row">
@@ -43,7 +45,7 @@ class Footer extends React.Component {
 	}
 }
 /* About Page Body */
-class AboutBody extends React.Component {
+class AboutBody extends Component {
 	render() {
 		return(
 			<div id="ks-body-row" className="row text-center">
@@ -72,7 +74,7 @@ class AboutBody extends React.Component {
 	}
 }
 /* Portfolio Page Body */
-class PortfolioBody extends React.Component {
+class PortfolioBody extends Component {
 	constructor() {
 		super();
 		this.state = {
@@ -124,7 +126,7 @@ class PortfolioBody extends React.Component {
 	}
 }
 /* Portfolio Company */
-class PortfolioCompany extends React.Component {
+class PortfolioCompany extends Component {
 	render() {
 		// Generate Date Line
 		let startDate = this.props.companyProjects.startDate;
@@ -159,7 +161,7 @@ class PortfolioCompany extends React.Component {
 		);
 	}
 }
-class PortfolioProject extends React.Component {
+class PortfolioProject extends Component {
 	generateResponsibilities() {
 		let resp = '';
 		let len = this.props.project.responsibilities.length;
@@ -193,8 +195,8 @@ class PortfolioProject extends React.Component {
 		);
 	}
 }
-/* Root KSAppBox Component */
-export class KSAppBox extends React.Component {
+/* Root App Component */
+export class App extends Component {
 	constructor() {
 		super();
 		this.PageSelection = {
