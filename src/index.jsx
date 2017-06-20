@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { App } from './jsx/components.jsx'
+import { App } from './components/App.jsx'
 
 window.React = React;
 
