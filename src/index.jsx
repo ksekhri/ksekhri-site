@@ -1,9 +1,9 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { App } from './components/App.jsx'
+import { Routes } from './Routes.jsx'
 
 window.React = React;
 
 render(
-	<App />, document.getElementById('ks-app-wrapper')
+	<Routes />, document.getElementById('ks-app-wrapper')
 );
