@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/ksekhri/ksekhri-site#readme",
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "babel-loader": "^7.0.0",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
@@ -37,6 +38,7 @@
   },
   "dependencies": {
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-router-dom": "^4.1.2"
   }
 }
