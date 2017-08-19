@@ -16,28 +16,18 @@ export class App extends Component {
 			selectedPage: this.PageSelection.ABOUT
 		}
 	}
-	setPage(tabTitle) {
-		let newPage;
-		if(tabTitle === 'About') {
-			newPage = this.PageSelection.ABOUT
-		} else if (tabTitle === 'Portfolio') {
-			newPage = this.PageSelection.PORTFOLIO
+	setPage() {
+		if (this.props.location.pathname === "/portfolio") {
+			return (<PortfolioBody/>);
+		} else {
+			return (<AboutBody/>);
 		}
-		this.setState({
-			selectedPage: newPage
-		});
 	}
 	render() {
-		let body;
-		if (this.state.selectedPage == this.PageSelection.ABOUT) {
-			body = <AboutBody/>;
-		} else if (this.state.selectedPage == this.PageSelection.PORTFOLIO) {
-			body = <PortfolioBody/>;
-		}
 		return (
 			<div id="ks-app" className="container-fluid">
 				<Header selectedPage={this.state.selectedPage} PageSelection={this.PageSelection} setPage={this.setPage.bind(this)}/>
-				{body}
+				{this.setPage()}
 				<Footer />
 			</div>
 		);
