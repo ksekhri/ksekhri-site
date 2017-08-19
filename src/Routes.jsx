@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { Route, BrowserRouter, Switch } from 'react-router-dom'
+import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom'
 import { App } from './components/App.jsx'
 
 export class Routes extends Component {
@@ -9,7 +9,7 @@ export class Routes extends Component {
 				<Switch>
 					<Route exact path="/" component={App} />
 					<Route exact path="/portfolio" component={App} />
-					<Route component={App} />
+					<Redirect to="/" />
 				</Switch>
 			</BrowserRouter>
 		);
